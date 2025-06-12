@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thông tin phương tiện</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Thông tin phương tiện</h1>
+        <dl class="row">
+            <dt class="col-sm-3">Biển số xe:</dt>
+            <dd class="col-sm-9">{{ vehicle['license_plate'] }}</dd>
+
+            <dt class="col-sm-3">Loại xe:</dt>
+            <dd class="col-sm-9">{{ vehicle['vehicle_type'] }}</dd>
+
+            <dt class="col-sm-3">Hãng xe:</dt>
+            <dd class="col-sm-9">{{ vehicle['brand'] }}</dd>
+
+            <dt class="col-sm-3">Số khung:</dt>
+            <dd class="col-sm-9">{{ vehicle['chassis_number'] }}</dd>
+
+            <dt class="col-sm-3">Số máy:</dt>
+            <dd class="col-sm-9">{{ vehicle['engine_number'] }}</dd>
+        </dl>
+
+        <h2>Lịch sử lộ trình</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Lái xe</th>
+                    <th>Điểm bắt đầu</th>
+                    <th>Điểm kết thúc</th>
+                    <th>Thời gian bắt đầu</th>
+                    <th>Thời gian kết thúc</th>
+                    <th>Quãng đường</th>
+                    <th>Mức tiêu hao nhiên liệu</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for route in routes %}
+                <tr>
+                    <td>{{ route['driver_id'] }}</td>
+                    <td>{{ route['start_point'] }}</td>
+                    <td>{{ route['end_point'] }}</td>
+                    <td>{{ route['start_time'] }}</td>
+                    <td>{{ route['end_time'] }}</td>
+                    <td>{{ route['distance'] }}</td>
+                    <td>{{ route['fuel_consumption'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ url_for('index') }}" class="btn btn-primary">Quay lại trang chủ</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

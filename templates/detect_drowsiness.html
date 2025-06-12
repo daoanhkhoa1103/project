@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phát hiện buồn ngủ</title>
+</head>
+<body>
+    <h1>Phát hiện buồn ngủ</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image">
+        <input type="submit" value="Phát hiện">
+    </form>
+
+    {% if left_eye %}
+        <p>Trạng thái mắt trái: {{ left_eye }}</p>
+        <p>Trạng thái mắt phải: {{ right_eye }}</p>
+    {% endif %}
+</body>
+</html>

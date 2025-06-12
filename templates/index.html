@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quản lý lái xe</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Danh sách lái xe</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên</th>
+                    <th>...</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for driver in drivers %}
+                <tr>
+                    <td>{{ driver['id'] }}</td>
+                    <td><a href="{{ url_for('driver_detail', driver_id=driver['id']) }}">{{ driver['name'] }}</a></td>
+                    <td>...</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h1>Danh sách phương tiện</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Biển số xe</th>
+                    <th>Loại xe</th>
+                    <th>Hãng xe</th>
+                    <th>Tài xế</th>
+                    <th>...</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for vehicle in vehicles %}
+                <tr>
+                    <td>{{ vehicle['license_plate'] }}</td>
+                    <td>{{ vehicle['vehicle_type'] }}</td>
+                    <td>{{ vehicle['brand'] }}</td>
+                    <td>{{ vehicle['driver_name'] }}</td>
+                    <td>...</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h1>Danh sách lộ trình</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tài xế</th>
+                    <th>Biển số xe</th>
+                    <th>Điểm bắt đầu</th>
+                    <th>Điểm kết thúc</th>
+                    <th>Thời gian bắt đầu</th>
+                    <th>Thời gian kết thúc</th>
+                    <th>...</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for route in routes %}
+                <tr>
+                    <td>{{ route['id'] }}</td>
+                    <td>{{ route['driver_name'] }}</td>
+                    <td>{{ route['vehicle_license_plate'] }}</td>
+                    <td>{{ route['start_point'] }}</td>
+                    <td>{{ route['end_point'] }}</td>
+                    <td>{{ route['start_time'] }}</td>
+                    <td>{{ route['end_time'] }}</td>
+                    <td>...</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ url_for('add_driver') }}" class="btn btn-primary">Thêm lái xe</a>
+        <a href="{{ url_for('add_vehicle') }}" class="btn btn-primary">Thêm phương tiện</a>
+        <a href="{{ url_for('add_route') }}" class="btn btn-primary">Thêm lộ trình</a>
+        <a href="{{ url_for('reports') }}" class="btn btn-primary">Báo cáo</a>
+
+        <a href="{{ url_for('detect_drowsiness_route') }}" class="btn btn-primary">Phát hiện buồn ngủ</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
