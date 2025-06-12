@@ -193,5 +193,6 @@ def detect_drowsiness():
     cv2.destroyAllWindows()  # Close all OpenCV windows
     pygame.mixer.quit()  # Stop any audio playback (if pygame was used)
     print("Resources released successfully.")
-    drowsiness_status = f"Trạng thái mắt trái: {status_l}, Trạng thái mắt phải: {status_r}"
+    drowsiness_status = f"Left eye status: {status_l}, Right eye status: {status_r}"
     return drowsiness_status
+
