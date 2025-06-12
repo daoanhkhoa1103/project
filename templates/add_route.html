@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Thêm lộ trình</title>
+    <title>Add Route</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container">
-        <h1>Thêm lộ trình</h1>
+        <h1>Add Route</h1>
         <form method="POST" class="form">
             <div class="form-group">
-                <label for="driver_id">Lái xe:</label>
+                <label for="driver_id">Driver:</label>
                 <select id="driver_id" name="driver_id" class="form-control" required>
                     {% for driver in drivers %}
                     <option value="{{ driver['id'] }}">{{ driver['name'] }}</option>
@@ -18,7 +18,7 @@
             </div>
 
             <div class="form-group">
-                <label for="vehicle_id">Phương tiện:</label>
+                <label for="vehicle_id">Vehicle:</label>
                 <select id="vehicle_id" name="vehicle_id" class="form-control" required>
                     {% for vehicle in vehicles %}
                     <option value="{{ vehicle['id'] }}">{{ vehicle['license_plate'] }}</option>
@@ -27,39 +27,39 @@
             </div>
 
             <div class="form-group">
-                <label for="start_point">Điểm bắt đầu:</label>
+                <label for="start_point">Start Point:</label>
                 <input type="text" id="start_point" name="start_point" class="form-control" required>
             </div>
 
             <div class="form-group">
-                <label for="end_point">Điểm kết thúc:</label>
+                <label for="end_point">End Point:</label>
                 <input type="text" id="end_point" name="end_point" class="form-control" required>
             </div>
 
             <div class="form-group">
-                <label for="start_time">Thời gian bắt đầu:</label>
+                <label for="start_time">Start Time:</label>
                 <input type="datetime-local" id="start_time" name="start_time" class="form-control" required>
             </div>
 
             <div class="form-group">
-                <label for="end_time">Thời gian kết thúc:</label>
+                <label for="end_time">End Time:</label>
                 <input type="datetime-local" id="end_time" name="end_time" class="form-control">
             </div>
 
             <div class="form-group">
-                <label for="distance">Quãng đường:</label>
+                <label for="distance">Distance:</label>
                 <input type="number" id="distance" name="distance" class="form-control" required>
             </div>
 
             <div class="form-group">
-                <label for="fuel_consumption">Mức tiêu hao nhiên liệu:</label>
+                <label for="fuel_consumption">Fuel Consumption:</label>
                 <input type="number" id="fuel_consumption" name="fuel_consumption" class="form-control" required>
             </div>
 
-            <button type="submit" class="btn btn-primary">Thêm</button>
+            <button type="submit" class="btn btn-primary">Add</button>
         </form>
 
-        <a href="{{ url_for('index') }}" class="btn btn-secondary">Quay lại trang chủ</a>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Back to Home</a>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
