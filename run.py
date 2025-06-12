@@ -138,12 +138,12 @@ def detect_drowsiness():
                     else:
                         count = 0
                     if(count > 15):
-                        print("Canh bao ngu gat!!!")
+                        print("Drowsiness warning!!!")
                         if(checksound == 1):
                             playMusic('voice.mp3')
                             checksound = 0
                         cv2.rectangle(image, (3,3), (image.shape[1]-3, image.shape[0]-3), (0,0,255), 6)
-                        cv2.putText(image, "Canh bao ngu gat!", (int(image.shape[1]/3)-35, image.shape[0]-30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2, cv2.LINE_AA)
+                        cv2.putText(image, "Drowsiness warning!", (int(image.shape[1]/3)-35, image.shape[0]-30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2, cv2.LINE_AA)
                         if(count == 16):
                             count_all += 1
                     else:
@@ -165,19 +165,19 @@ def detect_drowsiness():
         
         blank_image = np.zeros((80, 900, 3), np.uint8)
         blank_image[:] = (204,231,232)
-        cv2.putText(blank_image, "PHAN MEM THEO DOI LAI XE AN TOAN - SMART CHECK", (20,30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255,0,0), 2, cv2.LINE_AA)
+        cv2.putText(blank_image, "SAFE DRIVER MONITOR - SMART CHECK", (20,30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255,0,0), 2, cv2.LINE_AA)
         
-        text = "So lan canh bao: " + str(count_all)
+        text = "Warning count: " + str(count_all)
         cv2.putText(blank_image, text, (250,60), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255,0,0), 2, cv2.LINE_AA)
         
         if(count_all < 4):
-            text = "Tinh trang: Khoe khoan"
+            text = "Status: Alert"
             cv2.putText(blank_image, text, (20,60), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,255,0), 2, cv2.LINE_AA)
         elif(count_all > 3 and count_all < 7):
-            text = "Tinh trang: Met moi"
+            text = "Status: Tired"
             cv2.putText(blank_image, text, (20,60), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,215,255), 2, cv2.LINE_AA)
         elif(count_all > 6):
-            text = "Tinh trang: Rat met moi"
+            text = "Status: Very Tired"
             cv2.putText(blank_image, text, (20,60), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,0,255), 2, cv2.LINE_AA)
         combined_image = cv2.vconcat([blank_image, image])
         
@@ -193,5 +193,5 @@ def detect_drowsiness():
     cv2.destroyAllWindows()  # Close all OpenCV windows
     pygame.mixer.quit()  # Stop any audio playback (if pygame was used)
     print("Resources released successfully.")
-    drowsiness_status = f"Trạng thái mắt trái: {status_l}, Trạng thái mắt phải: {status_r}"
+    drowsiness_status = f"Left eye status: {status_l}, Right eye status: {status_r}"
     return drowsiness_status

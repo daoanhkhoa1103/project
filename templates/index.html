@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Quản lý lái xe</title>
+    <title>Driver Management</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container">
-        <h1>Danh sách lái xe</h1>
+        <h1>Drivers List</h1>
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Tên</th>
+                    <th>Name</th>
                     <th>...</th>
                 </tr>
             </thead>
@@ -26,14 +26,14 @@
             </tbody>
         </table>
 
-        <h1>Danh sách phương tiện</h1>
+        <h1>Vehicles List</h1>
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Biển số xe</th>
-                    <th>Loại xe</th>
-                    <th>Hãng xe</th>
-                    <th>Tài xế</th>
+                    <th>License Plate</th>
+                    <th>Vehicle Type</th>
+                    <th>Brand</th>
+                    <th>Driver</th>
                     <th>...</th>
                 </tr>
             </thead>
@@ -50,17 +50,17 @@
             </tbody>
         </table>
 
-        <h1>Danh sách lộ trình</h1>
+        <h1>Routes List</h1>
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Tài xế</th>
-                    <th>Biển số xe</th>
-                    <th>Điểm bắt đầu</th>
-                    <th>Điểm kết thúc</th>
-                    <th>Thời gian bắt đầu</th>
-                    <th>Thời gian kết thúc</th>
+                    <th>Driver</th>
+                    <th>License Plate</th>
+                    <th>Start Point</th>
+                    <th>End Point</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
                     <th>...</th>
                 </tr>
             </thead>
@@ -80,12 +80,12 @@
             </tbody>
         </table>
 
-        <a href="{{ url_for('add_driver') }}" class="btn btn-primary">Thêm lái xe</a>
-        <a href="{{ url_for('add_vehicle') }}" class="btn btn-primary">Thêm phương tiện</a>
-        <a href="{{ url_for('add_route') }}" class="btn btn-primary">Thêm lộ trình</a>
-        <a href="{{ url_for('reports') }}" class="btn btn-primary">Báo cáo</a>
+        <a href="{{ url_for('add_driver') }}" class="btn btn-primary">Add Driver</a>
+        <a href="{{ url_for('add_vehicle') }}" class="btn btn-primary">Add Vehicle</a>
+        <a href="{{ url_for('add_route') }}" class="btn btn-primary">Add Route</a>
+        <a href="{{ url_for('reports') }}" class="btn btn-primary">Reports</a>
 
-        <a href="{{ url_for('detect_drowsiness_route') }}" class="btn btn-primary">Phát hiện buồn ngủ</a>
+        <a href="{{ url_for('detect_drowsiness_route') }}" class="btn btn-primary">Detect Drowsiness</a>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

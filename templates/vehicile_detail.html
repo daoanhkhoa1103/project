@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Thông tin phương tiện</title>
+    <title>Vehicle Information</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container">
-        <h1>Thông tin phương tiện</h1>
+        <h1>Vehicle Information</h1>
         <dl class="row">
-            <dt class="col-sm-3">Biển số xe:</dt>
+            <dt class="col-sm-3">License Plate:</dt>
             <dd class="col-sm-9">{{ vehicle['license_plate'] }}</dd>
 
-            <dt class="col-sm-3">Loại xe:</dt>
+            <dt class="col-sm-3">Vehicle Type:</dt>
             <dd class="col-sm-9">{{ vehicle['vehicle_type'] }}</dd>
 
-            <dt class="col-sm-3">Hãng xe:</dt>
+            <dt class="col-sm-3">Brand:</dt>
             <dd class="col-sm-9">{{ vehicle['brand'] }}</dd>
 
-            <dt class="col-sm-3">Số khung:</dt>
+            <dt class="col-sm-3">Chassis Number:</dt>
             <dd class="col-sm-9">{{ vehicle['chassis_number'] }}</dd>
 
-            <dt class="col-sm-3">Số máy:</dt>
+            <dt class="col-sm-3">Engine Number:</dt>
             <dd class="col-sm-9">{{ vehicle['engine_number'] }}</dd>
         </dl>
 
-        <h2>Lịch sử lộ trình</h2>
+        <h2>Route History</h2>
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Lái xe</th>
-                    <th>Điểm bắt đầu</th>
-                    <th>Điểm kết thúc</th>
-                    <th>Thời gian bắt đầu</th>
-                    <th>Thời gian kết thúc</th>
-                    <th>Quãng đường</th>
-                    <th>Mức tiêu hao nhiên liệu</th>
+                    <th>Driver</th>
+                    <th>Start Point</th>
+                    <th>End Point</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Distance</th>
+                    <th>Fuel Consumption</th>
                 </tr>
             </thead>
             <tbody>
@@ -52,7 +52,7 @@
             </tbody>
         </table>
 
-        <a href="{{ url_for('index') }}" class="btn btn-primary">Quay lại trang chủ</a>
+        <a href="{{ url_for('index') }}" class="btn btn-primary">Back to Home</a>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

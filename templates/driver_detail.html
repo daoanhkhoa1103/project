@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Thông tin lái xe</title>
+    <title>Driver Information</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container">
-        <h1>Thông tin lái xe</h1>
+        <h1>Driver Information</h1>
         <dl class="row">
-            <dt class="col-sm-3">Tên:</dt>
+            <dt class="col-sm-3">Name:</dt>
             <dd class="col-sm-9">{{ driver['name'] }}</dd>
 
-            <dt class="col-sm-3">Ngày sinh:</dt>
+            <dt class="col-sm-3">Birthdate:</dt>
             <dd class="col-sm-9">{{ driver['birthdate'] }}</dd>
 
-            <dt class="col-sm-3">Số điện thoại:</dt>
+            <dt class="col-sm-3">Phone:</dt>
             <dd class="col-sm-9">{{ driver['phone'] }}</dd>
 
-            <dt class="col-sm-3">Địa chỉ:</dt>
+            <dt class="col-sm-3">Address:</dt>
             <dd class="col-sm-9">{{ driver['address'] }}</dd>
 
-            <dt class="col-sm-3">Giấy phép lái xe:</dt>
+            <dt class="col-sm-3">License:</dt>
             <dd class="col-sm-9">{{ driver['license_number'] }}</dd>
 
-            <dt class="col-sm-3">Ngày cấp:</dt>
+            <dt class="col-sm-3">Issued Date:</dt>
             <dd class="col-sm-9">{{ driver['license_issued_date'] }}</dd>
 
-            <dt class="col-sm-3">Ngày hết hạn:</dt>
+            <dt class="col-sm-3">Expiry Date:</dt>
             <dd class="col-sm-9">{{ driver['license_expiry_date'] }}</dd>
         </dl>
 
-        <h2>Lịch sử lộ trình</h2>
+        <h2>Route History</h2>
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Điểm bắt đầu</th>
-                    <th>Điểm kết thúc</th>
-                    <th>Thời gian bắt đầu</th>
-                    <th>Thời gian kết thúc</th>
-                    <th>Quãng đường</th>
-                    <th>Mức tiêu hao nhiên liệu</th>
+                    <th>Start Point</th>
+                    <th>End Point</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Distance</th>
+                    <th>Fuel Consumption</th>
                 </tr>
             </thead>
             <tbody>
@@ -56,7 +56,7 @@
             </tbody>
         </table>
 
-        <a href="{{ url_for('index') }}" class="btn btn-primary">Quay lại trang chủ</a>
+        <a href="{{ url_for('index') }}" class="btn btn-primary">Back to Home</a>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
